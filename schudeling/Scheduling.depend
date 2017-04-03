@@ -1,0 +1,1001 @@
+# depslib dependency file v1.0
+1486393672 source:c:\users\luis\desktop\schudeling\scheduling.cpp
+	"scheduling_fact.h"
+	<time.h>
+	<sstream>
+	<algorithm>
+	<queue>
+	<set>
+	<ga.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<shlobj.h>
+	"ListaDuplaEncadeada.h"
+
+1474398155 c:\users\luis\desktop\schudeling\scheduling_fact.h
+
+1473306770 c:\users\luis\desktop\schudeling\ga\ga.h
+	<ga/gaconfig.h>
+	<ga/GASimpleGA.h>
+	<ga/GASStateGA.h>
+	<ga/GAIncGA.h>
+	<ga/GADemeGA.h>
+	<ga/GADCrowdingGA.h>
+	<ga/GA1DBinStrGenome.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GA3DBinStrGenome.h>
+	<ga/GABin2DecGenome.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAListGenome.h>
+	<ga/GATreeGenome.h>
+
+1323892200 c:\users\luis\desktop\schudeling\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1473263642 c:\users\luis\desktop\schudeling\ga\gasimplega.h
+	<GABaseGA.h>
+
+1473263632 c:\users\luis\desktop\schudeling\ga\gabasega.h
+	<gaconfig.h>
+	<gaid.h>
+	<GAParameter.h>
+	<GAStatistics.h>
+	<GAGenome.h>
+	<GAPopulation.h>
+
+1173266204 c:\users\luis\desktop\schudeling\ga\gaid.h
+
+1473263656 c:\users\luis\desktop\schudeling\ga\gaparameter.h
+	<gaconfig.h>
+	<gatypes.h>
+	<std_stream.h>
+
+1173266204 c:\users\luis\desktop\schudeling\ga\gatypes.h
+
+1473263669 c:\users\luis\desktop\schudeling\ga\std_stream.h
+	<gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1473263680 c:\users\luis\desktop\schudeling\ga\gastatistics.h
+	<gatypes.h>
+	<gaconfig.h>
+	<GAGenome.h>
+	<GAPopulation.h>
+
+1473263703 c:\users\luis\desktop\schudeling\ga\gagenome.h
+	<gaid.h>
+	<gaconfig.h>
+	<gaerror.h>
+	<GAEvalData.h>
+	<std_stream.h>
+
+1473263715 c:\users\luis\desktop\schudeling\ga\gaerror.h
+	<gatypes.h>
+	<gaconfig.h>
+	<std_stream.h>
+
+1173266204 c:\users\luis\desktop\schudeling\ga\gaevaldata.h
+
+1473263730 c:\users\luis\desktop\schudeling\ga\gapopulation.h
+	<gaconfig.h>
+	<gaid.h>
+	<GASelector.h>
+	<GAScaling.h>
+	<GAEvalData.h>
+	<GAGenome.h>
+
+1473263740 c:\users\luis\desktop\schudeling\ga\gaselector.h
+	<string.h>
+	<gaid.h>
+
+1473263754 c:\users\luis\desktop\schudeling\ga\gascaling.h
+	<gaconfig.h>
+	<gaid.h>
+	<gatypes.h>
+	<GAGenome.h>
+
+1473263761 c:\users\luis\desktop\schudeling\ga\gasstatega.h
+	<GABaseGA.h>
+
+1473263768 c:\users\luis\desktop\schudeling\ga\gaincga.h
+	<GABaseGA.h>
+
+1473263775 c:\users\luis\desktop\schudeling\ga\gademega.h
+	<GABaseGA.h>
+
+1473263781 c:\users\luis\desktop\schudeling\ga\gadcrowdingga.h
+	<GABaseGA.h>
+
+1473263788 c:\users\luis\desktop\schudeling\ga\ga1dbinstrgenome.h
+	<GABinStr.h>
+	<GAGenome.h>
+
+1473263799 c:\users\luis\desktop\schudeling\ga\gabinstr.h
+	<string.h>
+	<gatypes.h>
+	<garandom.h>
+
+1473263812 c:\users\luis\desktop\schudeling\ga\garandom.h
+	<stdlib.h>
+	<gatypes.h>
+	<gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1473263820 c:\users\luis\desktop\schudeling\ga\ga2dbinstrgenome.h
+	<GABinStr.h>
+	<GAGenome.h>
+
+1473267566 c:\users\luis\desktop\schudeling\ga\ga3dbinstrgenome.h
+	<GABinStr.h>
+	<GAGenome.h>
+
+1473267588 c:\users\luis\desktop\schudeling\ga\gabin2decgenome.h
+	<GA1DBinStrGenome.h>
+	<gabincvt.h>
+
+1473267599 c:\users\luis\desktop\schudeling\ga\gabincvt.h
+	<gatypes.h>
+
+1473267719 c:\users\luis\desktop\schudeling\ga\ga1darraygenome.h
+	<GAArray.h>
+	<GAGenome.h>
+	<GAAllele.h>
+	<GA1DArrayGenome.C>
+
+1173266204 c:\users\luis\desktop\schudeling\ga\gaarray.h
+
+1473267700 c:\users\luis\desktop\schudeling\ga\gaallele.h
+	<gaconfig.h>
+	<garandom.h>
+	<std_stream.h>
+	<GAAllele.C>
+
+1473267710 c:\users\luis\desktop\schudeling\ga\gaallele.c
+	<string.h>
+	<GAAllele.h>
+	<gaerror.h>
+
+1473267730 c:\users\luis\desktop\schudeling\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<garandom.h>
+	<GA1DArrayGenome.h>
+	<GAMask.h>
+
+1173266204 c:\users\luis\desktop\schudeling\ga\gamask.h
+	<string.h>
+
+1473267747 c:\users\luis\desktop\schudeling\ga\ga2darraygenome.h
+	<GAArray.h>
+	<GAGenome.h>
+	<GAAllele.h>
+	<GA2DArrayGenome.C>
+
+1473267758 c:\users\luis\desktop\schudeling\ga\ga2darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<garandom.h>
+	<GA2DArrayGenome.h>
+	<GAMask.h>
+
+1473267775 c:\users\luis\desktop\schudeling\ga\ga3darraygenome.h
+	<GAArray.h>
+	<GAGenome.h>
+	<GAAllele.h>
+	<GA3DArrayGenome.C>
+
+1473267785 c:\users\luis\desktop\schudeling\ga\ga3darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<garandom.h>
+	<GA3DArrayGenome.h>
+	<GAMask.h>
+
+1473267838 c:\users\luis\desktop\schudeling\ga\galistgenome.h
+	<GAList.h>
+	<GAGenome.h>
+	<GAListGenome.C>
+
+1473267823 c:\users\luis\desktop\schudeling\ga\galist.h
+	<gaerror.h>
+	<GAListBASE.h>
+	<GAList.C>
+
+1473267807 c:\users\luis\desktop\schudeling\ga\galistbase.h
+	<GANode.h>
+
+1473267816 c:\users\luis\desktop\schudeling\ga\ganode.h
+	<gaconfig.h>
+	<std_stream.h>
+
+1473267829 c:\users\luis\desktop\schudeling\ga\galist.c
+	<GAList.h>
+
+1473267853 c:\users\luis\desktop\schudeling\ga\galistgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<GAListGenome.h>
+	<GAMask.h>
+	<garandom.h>
+
+1473267937 c:\users\luis\desktop\schudeling\ga\gatreegenome.h
+	<GATree.h>
+	<GAGenome.h>
+	<GATreeGenome.C>
+
+1473267937 c:\users\luis\desktop\schudeling\ga\gatree.h
+	<gaerror.h>
+	<GATreeBASE.h>
+	<GATree.C>
+
+1473267937 c:\users\luis\desktop\schudeling\ga\gatreebase.h
+	<GANode.h>
+
+1473267937 c:\users\luis\desktop\schudeling\ga\gatree.c
+	<GATree.h>
+
+1473267937 c:\users\luis\desktop\schudeling\ga\gatreegenome.c
+	<stdio.h>
+	<stdlib.h>
+	<GATreeGenome.h>
+	<garandom.h>
+
+1486317927 source:c:\users\luis\desktop\schudeling\scheduling_fact.c
+	"Scheduling_fact.h"
+	<stdio.h>
+	<stdlib.h>
+
+1323895800 c:\users\luis\desktop\schudeling\ga\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gaid.h
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gatypes.h
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gaevaldata.h
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gaincga.h
+	<ga/GABaseGA.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gademega.h
+	<ga/GABaseGA.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gadcrowdingga.h
+	<ga/GABaseGA.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\ga1dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\ga3dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gabin2decgenome.h
+	<ga/GA1DBinStrGenome.h>
+	<ga/gabincvt.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gabincvt.h
+	<ga/gatypes.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\ga1darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.C>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gaarray.h
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gaallele.h
+	<ga/gaconfig.h>
+	<ga/garandom.h>
+	<ga/std_stream.h>
+	<ga/GAAllele.C>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gamask.h
+	<string.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\ga2darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA2DArrayGenome.C>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\ga2darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\ga3darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA3DArrayGenome.C>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\ga3darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\galistgenome.h
+	<ga/GAList.h>
+	<ga/GAGenome.h>
+	<ga/GAListGenome.C>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\galist.h
+	<ga/gaerror.h>
+	<ga/GAListBASE.h>
+	<ga/GAList.C>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\galistbase.h
+	<ga/GANode.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\ganode.h
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\galist.c
+	<ga/GAList.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\galistgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GAListGenome.h>
+	<ga/GAMask.h>
+	<ga/garandom.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gatreegenome.h
+	<ga/GATree.h>
+	<ga/GAGenome.h>
+	<ga/GATreeGenome.C>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gatree.h
+	<ga/gaerror.h>
+	<ga/GATreeBASE.h>
+	<ga/GATree.C>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gatreebase.h
+	<ga/GANode.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gatree.c
+	<ga/GATree.h>
+
+1173269804 c:\users\luis\desktop\schudeling\ga\ga\gatreegenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GATreeGenome.h>
+	<ga/garandom.h>
+
+1477671208 c:\users\luis\desktop\schudeling\listaduplaencadeada.h
+
+1486314328 source:c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\scheduling_fact.c
+	"Scheduling_fact.h"
+	<stdio.h>
+	<stdlib.h>
+
+1474394556 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\scheduling_fact.h
+
+1491087706 source:c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\scheduling.cpp
+	"scheduling_fact.h"
+	<time.h>
+	<sstream>
+	<algorithm>
+	<queue>
+	<set>
+	<ga.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<shlobj.h>
+	"ListaDuplaEncadeada.h"
+
+1473303172 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga.h
+	<ga/gaconfig.h>
+	<ga/GASimpleGA.h>
+	<ga/GASStateGA.h>
+	<ga/GAIncGA.h>
+	<ga/GADemeGA.h>
+	<ga/GADCrowdingGA.h>
+	<ga/GA1DBinStrGenome.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GA3DBinStrGenome.h>
+	<ga/GABin2DecGenome.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAListGenome.h>
+	<ga/GATreeGenome.h>
+
+1323892200 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gaid.h
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gatypes.h
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gaevaldata.h
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gaincga.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gademega.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gadcrowdingga.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\ga1dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\ga3dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gabin2decgenome.h
+	<ga/GA1DBinStrGenome.h>
+	<ga/gabincvt.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gabincvt.h
+	<ga/gatypes.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\ga1darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.C>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gaarray.h
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gaallele.h
+	<ga/gaconfig.h>
+	<ga/garandom.h>
+	<ga/std_stream.h>
+	<ga/GAAllele.C>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gamask.h
+	<string.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\ga2darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA2DArrayGenome.C>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\ga2darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\ga3darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA3DArrayGenome.C>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\ga3darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\galistgenome.h
+	<ga/GAList.h>
+	<ga/GAGenome.h>
+	<ga/GAListGenome.C>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\galist.h
+	<ga/gaerror.h>
+	<ga/GAListBASE.h>
+	<ga/GAList.C>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\galistbase.h
+	<ga/GANode.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\ganode.h
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\galist.c
+	<ga/GAList.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\galistgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GAListGenome.h>
+	<ga/GAMask.h>
+	<ga/garandom.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gatreegenome.h
+	<ga/GATree.h>
+	<ga/GAGenome.h>
+	<ga/GATreeGenome.C>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gatree.h
+	<ga/gaerror.h>
+	<ga/GATreeBASE.h>
+	<ga/GATree.C>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gatreebase.h
+	<ga/GANode.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gatree.c
+	<ga/GATree.h>
+
+1173266204 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\ga\ga\gatreegenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GATreeGenome.h>
+	<ga/garandom.h>
+
+1477667610 c:\users\luisc\dropbox\mestrado - luis carlos\algoritmo genético fonte\schudeling\listaduplaencadeada.h
+
+1491142835 source:c:\users\luisc\documents\github\buscalocalag\schudeling\scheduling.cpp
+	"scheduling_fact.h"
+	<time.h>
+	<sstream>
+	<algorithm>
+	<queue>
+	<set>
+	<ga.h>
+	<ga/GASimpleGA.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GASStateGA.h>
+	<shlobj.h>
+	"ListaDuplaEncadeada.h"
+
+1474394556 c:\users\luisc\documents\github\buscalocalag\schudeling\scheduling_fact.h
+
+1473303172 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga.h
+	<ga/gaconfig.h>
+	<ga/GASimpleGA.h>
+	<ga/GASStateGA.h>
+	<ga/GAIncGA.h>
+	<ga/GADemeGA.h>
+	<ga/GADCrowdingGA.h>
+	<ga/GA1DBinStrGenome.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GA3DBinStrGenome.h>
+	<ga/GABin2DecGenome.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAListGenome.h>
+	<ga/GATreeGenome.h>
+
+1323892200 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gaid.h
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gatypes.h
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gaevaldata.h
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gaincga.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gademega.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gadcrowdingga.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\ga1dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\ga3dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gabin2decgenome.h
+	<ga/GA1DBinStrGenome.h>
+	<ga/gabincvt.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gabincvt.h
+	<ga/gatypes.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\ga1darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.C>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gaarray.h
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gaallele.h
+	<ga/gaconfig.h>
+	<ga/garandom.h>
+	<ga/std_stream.h>
+	<ga/GAAllele.C>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gamask.h
+	<string.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\ga2darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA2DArrayGenome.C>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\ga2darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\ga3darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA3DArrayGenome.C>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\ga3darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\galistgenome.h
+	<ga/GAList.h>
+	<ga/GAGenome.h>
+	<ga/GAListGenome.C>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\galist.h
+	<ga/gaerror.h>
+	<ga/GAListBASE.h>
+	<ga/GAList.C>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\galistbase.h
+	<ga/GANode.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\ganode.h
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\galist.c
+	<ga/GAList.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\galistgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GAListGenome.h>
+	<ga/GAMask.h>
+	<ga/garandom.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gatreegenome.h
+	<ga/GATree.h>
+	<ga/GAGenome.h>
+	<ga/GATreeGenome.C>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gatree.h
+	<ga/gaerror.h>
+	<ga/GATreeBASE.h>
+	<ga/GATree.C>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gatreebase.h
+	<ga/GANode.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gatree.c
+	<ga/GATree.h>
+
+1173266204 c:\users\luisc\documents\github\buscalocalag\schudeling\ga\ga\gatreegenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GATreeGenome.h>
+	<ga/garandom.h>
+
+1477667610 c:\users\luisc\documents\github\buscalocalag\schudeling\listaduplaencadeada.h
+
+1486314328 source:c:\users\luisc\documents\github\buscalocalag\schudeling\scheduling_fact.c
+	"Scheduling_fact.h"
+	<stdio.h>
+	<stdlib.h>
+

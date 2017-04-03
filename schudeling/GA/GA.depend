@@ -1,0 +1,897 @@
+# depslib dependency file v1.0
+1173266204 source:c:\ga\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\ga\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173266204 c:\ga\ga\gatypes.h
+
+1323885000 c:\ga\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173266204 c:\ga\ga\ga1darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.C>
+
+1173266204 c:\ga\ga\gaarray.h
+
+1173266204 c:\ga\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173266204 c:\ga\ga\gaid.h
+
+1173266204 c:\ga\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173266204 c:\ga\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1173266204 c:\ga\ga\gaevaldata.h
+
+1173266204 c:\ga\ga\gaallele.h
+	<ga/gaconfig.h>
+	<ga/garandom.h>
+	<ga/std_stream.h>
+	<ga/GAAllele.C>
+
+1173266204 c:\ga\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1173266204 c:\ga\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\ga\ga\gamask.h
+	<string.h>
+
+1173266204 source:c:\ga\ga\ga1dbinstrgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<ga/gaerror.h>
+	<ga/garandom.h>
+	<ga/GA1DBinStrGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\ga\ga\ga1dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\ga\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173266204 source:c:\ga\ga\ga2darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\ga\ga\ga2darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA2DArrayGenome.C>
+
+1173266204 c:\ga\ga\ga2darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 source:c:\ga\ga\ga2dbinstrgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<ga/gaerror.h>
+	<ga/garandom.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\ga\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 source:c:\ga\ga\ga3darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\ga\ga\ga3darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA3DArrayGenome.C>
+
+1173266204 c:\ga\ga\ga3darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 source:c:\ga\ga\ga3dbinstrgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<ga/gaerror.h>
+	<ga/garandom.h>
+	<ga/GA3DBinStrGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\ga\ga\ga3dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 source:c:\ga\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1250796834 source:c:\ga\ga\gabasega.c
+	<stdio.h>
+	<string.h>
+	<ga/GABaseGA.h>
+	<ga/garandom.h>
+	<ga/gaversion.h>
+
+1173266204 c:\ga\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\ga\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173266204 c:\ga\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\ga\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\ga\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173266204 c:\ga\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173266402 c:\ga\ga\gaversion.h
+	<ga/gaconfig.h>
+
+1173266204 source:c:\ga\ga\gabin2decgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<ga/gaerror.h>
+	<ga/GABin2DecGenome.h>
+
+1173266204 c:\ga\ga\gabin2decgenome.h
+	<ga/GA1DBinStrGenome.h>
+	<ga/gabincvt.h>
+
+1173266204 c:\ga\ga\gabincvt.h
+	<ga/gatypes.h>
+
+1173266204 source:c:\ga\ga\gabincvt.c
+	<stdio.h>
+	<limits.h>
+	<string.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/gabincvt.h>
+
+1173266204 source:c:\ga\ga\gabinstr.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/gaerror.h>
+	<ga/GABinStr.h>
+
+1173266204 source:c:\ga\ga\gadcrowdingga.c
+	"GADCrowdingGA.h"
+	"GAList.h"
+	"garandom.h"
+
+1173266204 c:\ga\ga\gadcrowdingga.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\ga\ga\galist.h
+	<ga/gaerror.h>
+	<ga/GAListBASE.h>
+	<ga/GAList.C>
+
+1173266204 c:\ga\ga\galistbase.h
+	<ga/GANode.h>
+
+1173266204 c:\ga\ga\ganode.h
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173266204 c:\ga\ga\galist.c
+	<ga/GAList.h>
+
+1173266204 source:c:\ga\ga\gademega.c
+	<ga/garandom.h>
+	<ga/GADemeGA.h>
+
+1173266204 c:\ga\ga\gademega.h
+	<ga/GABaseGA.h>
+
+1173266204 source:c:\ga\ga\gaerror.c
+	<string.h>
+	<ga/gaerror.h>
+	<stdio.h>
+
+1173266204 source:c:\ga\ga\gagenome.c
+	<ga/GAGenome.h>
+
+1173266204 source:c:\ga\ga\gaincga.c
+	<ga/GAIncGA.h>
+	<ga/garandom.h>
+
+1173266204 c:\ga\ga\gaincga.h
+	<ga/GABaseGA.h>
+
+1173266204 source:c:\ga\ga\galist.c
+	<ga/GAList.h>
+
+1173266204 source:c:\ga\ga\galistbase.c
+	<ga/GAListBASE.h>
+	<ga/gaerror.h>
+
+1173266204 source:c:\ga\ga\galistgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GAListGenome.h>
+	<ga/GAMask.h>
+	<ga/garandom.h>
+
+1173266204 c:\ga\ga\galistgenome.h
+	<ga/GAList.h>
+	<ga/GAGenome.h>
+	<ga/GAListGenome.C>
+
+1173266204 c:\ga\ga\galistgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GAListGenome.h>
+	<ga/GAMask.h>
+	<ga/garandom.h>
+
+1173266204 source:c:\ga\ga\gaparameter.c
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAParameter.h>
+
+1173266204 source:c:\ga\ga\gapopulation.c
+	<string.h>
+	<math.h>
+	<ga/GAPopulation.h>
+	<ga/GASelector.h>
+	<ga/garandom.h>
+	<ga/GABaseGA.h>
+
+1173266204 source:c:\ga\ga\garandom.c
+	<ga/garandom.h>
+	<time.h>
+	<math.h>
+	<string.h>
+	<unistd.h>
+
+1173266204 source:c:\ga\ga\garealgenome.c
+	<ga/GARealGenome.h>
+	<ga/GAAllele.C>
+	<ga/GA1DArrayGenome.C>
+
+1173266204 c:\ga\ga\garealgenome.h
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GARealGenome.C>
+
+1173266204 c:\ga\ga\garealgenome.c
+	<ga/GARealGenome.h>
+	<ga/GAAllele.C>
+	<ga/GA1DArrayGenome.C>
+
+1173266204 source:c:\ga\ga\gascaling.c
+	<math.h>
+	<ga/gaerror.h>
+	<ga/GAScaling.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+	<ga/GABaseGA.h>
+
+1173266204 source:c:\ga\ga\gaselector.c
+	<ga/gaconfig.h>
+	<ga/GAPopulation.h>
+	<ga/GAGenome.h>
+	<ga/GASelector.h>
+	<ga/garandom.h>
+	<ga/gaerror.h>
+
+1251230344 source:c:\ga\ga\gasimplega.c
+	<ga/GASimpleGA.h>
+	<ga/GABin2DecGenome.h>
+	<ga/garandom.h>
+
+1173266204 c:\ga\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173266204 source:c:\ga\ga\gasstatega.c
+	<ga/GASStateGA.h>
+	<ga/garandom.h>
+
+1173266204 c:\ga\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1379861108 source:c:\ga\ga\gastatistics.c
+	<string.h>
+	<ga/gaerror.h>
+	<ga/GAStatistics.h>
+
+1173266204 source:c:\ga\ga\gastatistics_original.c
+	<string.h>
+	<ga/gaerror.h>
+	<ga/GAStatistics.h>
+
+1173266204 source:c:\ga\ga\gastringgenome.c
+	<ga/GAStringGenome.h>
+	<ga/GAAllele.C>
+	<ga/GA1DArrayGenome.C>
+
+1173266204 c:\ga\ga\gastringgenome.h
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAStringGenome.C>
+
+1173266204 c:\ga\ga\gastringgenome.c
+	<ga/GAStringGenome.h>
+	<ga/GAAllele.C>
+	<ga/GA1DArrayGenome.C>
+
+1173266204 source:c:\ga\ga\gatree.c
+	<ga/GATree.h>
+
+1173266204 c:\ga\ga\gatree.h
+	<ga/gaerror.h>
+	<ga/GATreeBASE.h>
+	<ga/GATree.C>
+
+1173266204 c:\ga\ga\gatreebase.h
+	<ga/GANode.h>
+
+1173266204 c:\ga\ga\gatree.c
+	<ga/GATree.h>
+
+1173266204 source:c:\ga\ga\gatreebase.c
+	<ga/GATreeBASE.h>
+	<ga/gaerror.h>
+
+1173266204 source:c:\ga\ga\gatreegenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GATreeGenome.h>
+	<ga/garandom.h>
+
+1173266204 c:\ga\ga\gatreegenome.h
+	<ga/GATree.h>
+	<ga/GAGenome.h>
+	<ga/GATreeGenome.C>
+
+1173266204 c:\ga\ga\gatreegenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GATreeGenome.h>
+	<ga/garandom.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\garandom.h
+	<stdlib.h>
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<math.h>
+	<limits.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gatypes.h
+
+1323892200 c:\users\luis\desktop\ga\ga\gaconfig.h
+	<sgidefs.h>
+	<stdlib.h>
+	<assert.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\ga1darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.C>
+
+1173266204 c:\users\luis\desktop\ga\ga\gaarray.h
+
+1173266204 c:\users\luis\desktop\ga\ga\gagenome.h
+	<ga/gaid.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAEvalData.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gaid.h
+
+1173266204 c:\users\luis\desktop\ga\ga\gaerror.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\std_stream.h
+	<ga/gaconfig.h>
+	<iostream>
+	<fstream>
+	<iostream.h>
+	<fstream.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gaevaldata.h
+
+1173266204 c:\users\luis\desktop\ga\ga\gaallele.h
+	<ga/gaconfig.h>
+	<ga/garandom.h>
+	<ga/std_stream.h>
+	<ga/GAAllele.C>
+
+1173266204 c:\users\luis\desktop\ga\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\ga1darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gamask.h
+	<string.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\ga1dbinstrgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<ga/gaerror.h>
+	<ga/garandom.h>
+	<ga/GA1DBinStrGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\ga1dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gabinstr.h
+	<string.h>
+	<ga/gatypes.h>
+	<ga/garandom.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\ga2darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\ga2darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA2DArrayGenome.C>
+
+1173266204 c:\users\luis\desktop\ga\ga\ga2darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA2DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\ga2dbinstrgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<ga/gaerror.h>
+	<ga/garandom.h>
+	<ga/GA2DBinStrGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\ga2dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\ga3darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\ga3darraygenome.h
+	<ga/GAArray.h>
+	<ga/GAGenome.h>
+	<ga/GAAllele.h>
+	<ga/GA3DArrayGenome.C>
+
+1173266204 c:\users\luis\desktop\ga\ga\ga3darraygenome.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/garandom.h>
+	<ga/GA3DArrayGenome.h>
+	<ga/GAMask.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\ga3dbinstrgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<ga/gaerror.h>
+	<ga/garandom.h>
+	<ga/GA3DBinStrGenome.h>
+	<ga/GAMask.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\ga3dbinstrgenome.h
+	<ga/GABinStr.h>
+	<ga/GAGenome.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gaallele.c
+	<string.h>
+	<ga/GAAllele.h>
+	<ga/gaerror.h>
+
+1250796834 source:c:\users\luis\desktop\ga\ga\gabasega.c
+	<stdio.h>
+	<string.h>
+	<ga/GABaseGA.h>
+	<ga/garandom.h>
+	<ga/gaversion.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gabasega.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GAParameter.h>
+	<ga/GAStatistics.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gaparameter.h
+	<ga/gaconfig.h>
+	<ga/gatypes.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gastatistics.h
+	<ga/gatypes.h>
+	<ga/gaconfig.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gapopulation.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/GASelector.h>
+	<ga/GAScaling.h>
+	<ga/GAEvalData.h>
+	<ga/GAGenome.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gaselector.h
+	<string.h>
+	<ga/gaid.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gascaling.h
+	<ga/gaconfig.h>
+	<ga/gaid.h>
+	<ga/gatypes.h>
+	<ga/GAGenome.h>
+
+1173266402 c:\users\luis\desktop\ga\ga\gaversion.h
+	<ga/gaconfig.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gabin2decgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<ga/gaerror.h>
+	<ga/GABin2DecGenome.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gabin2decgenome.h
+	<ga/GA1DBinStrGenome.h>
+	<ga/gabincvt.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gabincvt.h
+	<ga/gatypes.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gabincvt.c
+	<stdio.h>
+	<limits.h>
+	<string.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/gabincvt.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gabinstr.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ga/gaerror.h>
+	<ga/GABinStr.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gadcrowdingga.c
+	"GADCrowdingGA.h"
+	"GAList.h"
+	"garandom.h"
+
+1173266204 c:\users\luis\desktop\ga\ga\gadcrowdingga.h
+	<ga/GABaseGA.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\galist.h
+	<ga/gaerror.h>
+	<ga/GAListBASE.h>
+	<ga/GAList.C>
+
+1173266204 c:\users\luis\desktop\ga\ga\galistbase.h
+	<ga/GANode.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\ganode.h
+	<ga/gaconfig.h>
+	<ga/std_stream.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\galist.c
+	<ga/GAList.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gademega.c
+	<ga/garandom.h>
+	<ga/GADemeGA.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gademega.h
+	<ga/GABaseGA.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gaerror.c
+	<string.h>
+	<ga/gaerror.h>
+	<stdio.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gagenome.c
+	<ga/GAGenome.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gaincga.c
+	<ga/GAIncGA.h>
+	<ga/garandom.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gaincga.h
+	<ga/GABaseGA.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\galist.c
+	<ga/GAList.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\galistbase.c
+	<ga/GAListBASE.h>
+	<ga/gaerror.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\galistgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GAListGenome.h>
+	<ga/GAMask.h>
+	<ga/garandom.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\galistgenome.h
+	<ga/GAList.h>
+	<ga/GAGenome.h>
+	<ga/GAListGenome.C>
+
+1173266204 c:\users\luis\desktop\ga\ga\galistgenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GAListGenome.h>
+	<ga/GAMask.h>
+	<ga/garandom.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gaparameter.c
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<ga/gaconfig.h>
+	<ga/gaerror.h>
+	<ga/GAParameter.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gapopulation.c
+	<string.h>
+	<math.h>
+	<ga/GAPopulation.h>
+	<ga/GASelector.h>
+	<ga/garandom.h>
+	<ga/GABaseGA.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\garandom.c
+	<ga/garandom.h>
+	<time.h>
+	<math.h>
+	<string.h>
+	<unistd.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\garealgenome.c
+	<ga/GARealGenome.h>
+	<ga/GAAllele.C>
+	<ga/GA1DArrayGenome.C>
+
+1173266204 c:\users\luis\desktop\ga\ga\garealgenome.h
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GARealGenome.C>
+
+1173266204 c:\users\luis\desktop\ga\ga\garealgenome.c
+	<ga/GARealGenome.h>
+	<ga/GAAllele.C>
+	<ga/GA1DArrayGenome.C>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gascaling.c
+	<math.h>
+	<ga/gaerror.h>
+	<ga/GAScaling.h>
+	<ga/GAGenome.h>
+	<ga/GAPopulation.h>
+	<ga/GABaseGA.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gaselector.c
+	<ga/gaconfig.h>
+	<ga/GAPopulation.h>
+	<ga/GAGenome.h>
+	<ga/GASelector.h>
+	<ga/garandom.h>
+	<ga/gaerror.h>
+
+1251230344 source:c:\users\luis\desktop\ga\ga\gasimplega.c
+	<ga/GASimpleGA.h>
+	<ga/GABin2DecGenome.h>
+	<ga/garandom.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gasimplega.h
+	<ga/GABaseGA.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gasstatega.c
+	<ga/GASStateGA.h>
+	<ga/garandom.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gasstatega.h
+	<ga/GABaseGA.h>
+
+1379861108 source:c:\users\luis\desktop\ga\ga\gastatistics.c
+	<string.h>
+	<ga/gaerror.h>
+	<ga/GAStatistics.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gastatistics_original.c
+	<string.h>
+	<ga/gaerror.h>
+	<ga/GAStatistics.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gastringgenome.c
+	<ga/GAStringGenome.h>
+	<ga/GAAllele.C>
+	<ga/GA1DArrayGenome.C>
+
+1173266204 c:\users\luis\desktop\ga\ga\gastringgenome.h
+	<ga/GAAllele.h>
+	<ga/GA1DArrayGenome.h>
+	<ga/GAStringGenome.C>
+
+1173266204 c:\users\luis\desktop\ga\ga\gastringgenome.c
+	<ga/GAStringGenome.h>
+	<ga/GAAllele.C>
+	<ga/GA1DArrayGenome.C>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gatree.c
+	<ga/GATree.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gatree.h
+	<ga/gaerror.h>
+	<ga/GATreeBASE.h>
+	<ga/GATree.C>
+
+1173266204 c:\users\luis\desktop\ga\ga\gatreebase.h
+	<ga/GANode.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gatree.c
+	<ga/GATree.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gatreebase.c
+	<ga/GATreeBASE.h>
+	<ga/gaerror.h>
+
+1173266204 source:c:\users\luis\desktop\ga\ga\gatreegenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GATreeGenome.h>
+	<ga/garandom.h>
+
+1173266204 c:\users\luis\desktop\ga\ga\gatreegenome.h
+	<ga/GATree.h>
+	<ga/GAGenome.h>
+	<ga/GATreeGenome.C>
+
+1173266204 c:\users\luis\desktop\ga\ga\gatreegenome.c
+	<stdio.h>
+	<stdlib.h>
+	<ga/GATreeGenome.h>
+	<ga/garandom.h>
+

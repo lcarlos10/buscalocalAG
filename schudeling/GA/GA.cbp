@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="GA" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/GA" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Debug/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add directory="../GA" />
+					<Add directory="ga" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/GA" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="ga/GA1DArrayGenome.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GA1DArrayGenome.h" />
+		<Unit filename="ga/GA1DBinStrGenome.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GA1DBinStrGenome.h" />
+		<Unit filename="ga/GA2DArrayGenome.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GA2DArrayGenome.h" />
+		<Unit filename="ga/GA2DBinStrGenome.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GA2DBinStrGenome.h" />
+		<Unit filename="ga/GA3DArrayGenome.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GA3DArrayGenome.h" />
+		<Unit filename="ga/GA3DBinStrGenome.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GA3DBinStrGenome.h" />
+		<Unit filename="ga/GAAllele.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GAAllele.h" />
+		<Unit filename="ga/GAArray.h" />
+		<Unit filename="ga/GABaseGA.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GABaseGA.h" />
+		<Unit filename="ga/GABin2DecGenome.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GABin2DecGenome.h" />
+		<Unit filename="ga/GABinStr.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GABinStr.h" />
+		<Unit filename="ga/GADCrowdingGA.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GADCrowdingGA.h" />
+		<Unit filename="ga/GADemeGA.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GADemeGA.h" />
+		<Unit filename="ga/GAEvalData.h" />
+		<Unit filename="ga/GAGenome.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GAGenome.h" />
+		<Unit filename="ga/GAIncGA.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GAIncGA.h" />
+		<Unit filename="ga/GAList.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GAList.h" />
+		<Unit filename="ga/GAListBASE.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GAListBASE.h" />
+		<Unit filename="ga/GAListGenome.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GAListGenome.h" />
+		<Unit filename="ga/GAMask.h" />
+		<Unit filename="ga/GANode.h" />
+		<Unit filename="ga/GAParameter.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GAParameter.h" />
+		<Unit filename="ga/GAPopulation.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GAPopulation.h" />
+		<Unit filename="ga/GARealGenome.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GARealGenome.h" />
+		<Unit filename="ga/GASStateGA.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GASStateGA.h" />
+		<Unit filename="ga/GAScaling.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GAScaling.h" />
+		<Unit filename="ga/GASelector.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GASelector.h" />
+		<Unit filename="ga/GASimpleGA.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GASimpleGA.h" />
+		<Unit filename="ga/GAStatistics.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GAStatistics.h" />
+		<Unit filename="ga/GAStatistics_Original.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GAStringGenome.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GAStringGenome.h" />
+		<Unit filename="ga/GATree.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GATree.h" />
+		<Unit filename="ga/GATreeBASE.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GATreeBASE.h" />
+		<Unit filename="ga/GATreeGenome.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/GATreeGenome.h" />
+		<Unit filename="ga/ga.h" />
+		<Unit filename="ga/gabincvt.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/gabincvt.h" />
+		<Unit filename="ga/gaconfig.h" />
+		<Unit filename="ga/gaerror.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/gaerror.h" />
+		<Unit filename="ga/gaid.h" />
+		<Unit filename="ga/garandom.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ga/garandom.h" />
+		<Unit filename="ga/gatypes.h" />
+		<Unit filename="ga/gaversion.h" />
+		<Unit filename="ga/std_stream.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
