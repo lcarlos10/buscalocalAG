@@ -61,12 +61,17 @@
 
 using namespace std;
 
+//METODOS DE BUSCA LOCAL - PERMUTAÇÃO/INSERÇÃO
 //Metodos de ordenação
 void insercao(vector<int> vet, int startWindow,int finalWindow);
+//Permuta os cromossomos e avalia-os a cada permutação.
 void permutacao(vector<int> vet, int originalScore);
 
-vector <int> listaBestScore;
-vector <int> listaBest;
+//listaSolucaoPermutacao:  armazena a melhor solução encontrada na função permutação.
+//bestScorePermutacao: Guarda o melhor score encontrado na função permutação
+vector <int> listaSolucaoPermutacao;
+int bestScorePermutacao;
+vector<int> bestSeedBuscaLocal;
 
 //User-defined function declarations
 int factivel(int *vPriorities, int *vSequences, int iPrioMode);
@@ -150,7 +155,7 @@ int * OrderVectorNEH_CP( int pVetor[], int pOrder);
 
 //Lista encadeada
 tpLista *lista = NULL;
-vector<int> SSS;
+//vector<int> SSS;
 
 vector<int> Solucoes(15);
 
@@ -1267,7 +1272,7 @@ int main(int argc, char **argv)
         }
 
         ga.initialize();
-        //
+
         while (!ga.done()) {
             cout <<"\rRunning Iteraction " << i+1 << " (of " << outIter <<
             ") and Generation " << ga.generation()+2;
@@ -1281,6 +1286,26 @@ int main(int argc, char **argv)
         }
 
     } // for(int i = 0; i < outIter; i++) {
+
+    int P[MACHINE*JOB];
+
+    AtualizarVetorComArray( P, bestSeedBuscaLocal );
+    int scoreFinal = score[0] = factivel(P,R,1,T);
+
+    if(scoreFinal > bestScorePermutacao){
+        cout << "Busca local foi mais eficiente" << endl;
+        cout << "Score: " scoreFinal << endl;
+        for (int seq = 0; seq < JOB*MACHINE; seq++)
+            vetBestSequence[seq] = bestSeedBuscaLocal[seq];
+    }
+    else
+    {
+        cout << "Busca por permutação foi mais eficiente" << endl;
+        cout << "Score: " + scoreFinal << endl;
+        for (int seq = 0; seq < JOB*MACHINE; seq++)
+            vetBestSequence[seq] = listaSolucaoPermutacao[seq];
+    }
+
     getchar();
 
     cout << "\n\nComplete!!! Please check the following files in your DESKTOP FOLDER: \n\"BestSequenceIdentified.txt\"\n\"Convergence.txt\"\n\n"<<endl;
@@ -1761,12 +1786,15 @@ void setup()
     for (int num = 0; num < nBestIndividuals; num++){
         for(int sem = 0; sem < JOB*MACHINE; sem++){
             S[num].push_back(ss[sem]);
+            cout << S[num][sem] << ", ";
         }
+        cout << endl;
+        getchar();
     }
 
     int score; // = factivel(P,R,1,T);
 
-        // Calcula aptidao da semente
+    // Calcula aptidao da semente
     AtualizarVetorComArray(P, S[0]);
     score = factivel(P,R,1,T);
 
@@ -1777,8 +1805,8 @@ void setup()
     bestCurrent = ITER;
 
     // Calcula aptidao da semente
-    AtualizarVetorComArray(P, S[0]);
-    score = factivel(P,R,1,T);
+    //AtualizarVetorComArray(P, S[0]);
+    //score = factivel(P,R,1,T);
 
     if (intAbordagem==1){ // SEMENTE INICIAL NÃO FACTIVEL
 
@@ -1808,6 +1836,7 @@ void setup()
         OrderVectorNEH( ss );
     }
 
+        /*
         S.clear();
 
         for (int num = 0; num < nBestIndividuals; num++){
@@ -1822,18 +1851,13 @@ void setup()
         AtualizarVetorComArray( P, S[0] );
         score = factivel(P,R,1,T);
 
-        //Realizar a permutação
-//        permutacao(S[0]);
-        //permutacao(S[0], 10);
-
-        //Método de inserção
-        //insercao(S[0],1,50);
 
         for (int num = 0; num < nBestIndividuals; num++){
             for(int sem = 0; sem < JOB*MACHINE; sem++){
                 S[num].push_back(ss[sem]);
             }
         }
+        */
 
         cout << "-->" << " Score Inicial: " << score << " - MakeSpan: " << intMakeSpanOtimo << endl;
         bestCurrent = score;
@@ -2245,6 +2269,7 @@ float Objective(GAGenome& g)
         //bestCurrent = ITER;
         for (int num = 0; num < nBestIndividuals; num++) {
             // Copia S para uma estrutura temporaria que sofrerá permutação
+
             SS = S[num];
             //
             for(int i=0; i<genome.width(); i++) {
@@ -2265,36 +2290,52 @@ float Objective(GAGenome& g)
             // Conta as soluções factiveis
             if (score[num] < ITER) {
                 intSolucoesFactiveis++;
-
             } else {
                 intSolucoesNaoFactiveis++;
             }
 
             permutacao(SS, score[num]);
 
+            score[0] = bestScorePermutacao;
+
+            if(score[0] < bestCurrent) bestCurrent = score[0];
+            ///////////////////////////////////////////////////
+            // Imprime se melhorou
+            ///////////////////////////////////////////////////
+            if (score[0] < score_ant) {
+                for (int seq = 0; seq < JOB*MACHINE; seq++){
+                    cout << listaSolucaoPermutacao[seq] << endl;
+                    vetBestSequence[seq] = listaSolucaoPermutacao[seq];
+                }
+                return (float)score[0];
+            }
+        }
+     }
+     return (float)score[0];
+
+            /*
             sort(score.begin(), score.end());
             if(score[0] < bestCurrent) bestCurrent = score[0];
             ///////////////////////////////////////////////////
             // Imprime se melhorou
             ///////////////////////////////////////////////////
             if (score[0] < score_ant) {
-                ofstream fileOut;
-                fileOut.open(ArqBsi.c_str(), ios::out);
+                //ofstream fileOut;
+                //fileOut.open(ArqBsi.c_str(), ios::out);
                 for (int seq = 0; seq < JOB*MACHINE; seq++){
-                    fileOut << P[seq] << endl;
+                    //fileOut << P[seq] << endl;
                     cout << P[seq] << endl;
                     vetBestSequence[seq] = P[seq];
-
                 }
 
-                fileOut << "\nMakespan da seqüência prioridades acima = " << bestCurrent <<" (UT)"<< endl;
+                //fileOut << "\nMakespan da seqüência prioridades acima = " << bestCurrent <<" (UT)"<< endl;
                 fileOut.close();
                 score_ant = score[0];
                 return (float)score[0];
             }
         }//fecha for
      }//fecha else
-     return (float)score[0];
+     return (float)score[0];*/
 } // Objective(GAGenome& g)
 
 /******************************************************************************
@@ -2395,6 +2436,7 @@ void localSearch(const GAStatistics &g)
                         bestCurrent = fitness;
                         //mudo a semente
                         bestSeed = newSS;
+                        bestScorePermutacao = bestSeed;
                         //cout << "\nAtualiza solucao em Local Search: " << bestCurrent << endl;
                         //getchar();
                     }
@@ -2905,10 +2947,22 @@ int localSearch4(GAGenome& g, int originalScore)
 void permutacao(vector<int> vet, int originalScore)
 {
     int P[MACHINE*JOB];
-    int bestScore = originalScore;
+    int bestScore = 0;
     int score = 0;
+    bool melhorou = false;
+    vector<int> SSS;
+
+    if(bestScorePermutacao <= originalScore && bestScorePermutacao > 0){
+        bestScore = bestScorePermutacao;
+    }else{
+        bestScore = originalScore;
+    }
 
     for(size_t i = 0; i < MACHINE; i++){
+        if(melhorou == true){
+            vet = listaSolucaoPermutacao;
+            melhorou = false;
+        }
         for(size_t j = (i*JOB); j < (JOB*(i+1)); j++){
             SSS = vet;
             for(size_t k = j + 1; k < (JOB*(i+1)); k++){
@@ -2923,41 +2977,24 @@ void permutacao(vector<int> vet, int originalScore)
 
                 // Encontra as soluções factiveis
                 if (score < ITER) {
-                    //intSolucoesFactiveis++;
                     if(score < bestScore){
+                        melhorou = true;
                         bestScore = score;
-                        listaBest = SSS;
+                        listaSolucaoPermutacao = SSS;
                         printf("\nSolucao melhor: %d", score);
                     }
-                } else {
-                    intSolucoesNaoFactiveis++;
                 }
             }
-
         }
     }
+    if(!(bestScorePermutacao > bestScore))
+        bestScorePermutacao = bestScore;
 }
-
+//=======================================================
 //=============Algoritmo de Inserção======================
 void insercao(vector<int> vet, int startWindow,int finalWindow)
 {
 
-     // Apenas o menor score interessa.
-            //AtualizarVetorComArray( P, SSS );
-
-            //score = factivel(P,R,1,T);
-
-            // Encontra as soluções factiveis
-            //if (score < ITER) {
-                //intSolucoesFactiveis++;
-                //if(score < bestScore){
-                   // bestScore = score;
-                   // listaBest = SSS;
-                   // printf("\nSolucao melhor: %d", score);
-               // }
-           // } else {
-            //    intSolucoesNaoFactiveis++;
-            //}
     int j;
     int k;
 
