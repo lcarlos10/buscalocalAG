@@ -2969,13 +2969,16 @@ void permutacao(vector<int> vet, int originalScore)
         bestScore = originalScore;
     }
 
+    //Intervalo das maquinas
     for(size_t i = 0; i < MACHINE; i++){
         if(melhorou == true){
             vet = listaSolucaoPermutacao;
             melhorou = false;
         }
+        //Intervalo dos jobs dentro das maquinas
         for(size_t j = (i*JOB); j < (JOB*(i+1)); j++){
             SSS = vet;
+            //Função de permutacao
             for(size_t k = j + 1; k < (JOB*(i+1)); k++){
                 SSS[k] += SSS[j];
                 SSS[j] = SSS[k] - SSS[j];
@@ -2998,6 +3001,7 @@ void permutacao(vector<int> vet, int originalScore)
             }
         }
     }
+    //verifica se teve alguma melhora no individuo comparado a populacao ja avaliada
     if(!(bestScorePermutacao > bestScore))
         bestScorePermutacao = bestScore;
 }
@@ -3025,7 +3029,7 @@ void insercao(vector<int> vet, int startWindow,int finalWindow)
                         aux = vet[j];
                         cont = k - 1;
                     }
-                    while(cont>=0 && vet[cont]>0){
+                    while(cont>=0){
                         vet[cont + 1] = vet[cont];
                         cont--;
                     }
