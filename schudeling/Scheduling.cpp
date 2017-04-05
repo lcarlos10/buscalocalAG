@@ -71,7 +71,12 @@ void permutacao(vector<int> vet, int originalScore);
 //bestScorePermutacao: Guarda o melhor score encontrado na função permutação
 vector <int> listaSolucaoPermutacao;
 int bestScorePermutacao;
+//listaSolucaoInsercao:  armazena a melhor solução encontrada na função insercao.
+//bestScoreInsercao: Guarda o melhor score encontrado na função insercao
+vector <int> listaSolucaoInsercao;
+int bestScoreInsercao;
 vector<int> bestSeedBuscaLocal;
+vector<int> seedFinal;
 
 //User-defined function declarations
 int factivel(int *vPriorities, int *vSequences, int iPrioMode);
@@ -568,15 +573,12 @@ void * OrderVectorNEH( int pVetor[])
 
 void * AtualizarSemente( vector < vector <int> > pSemente, int pRota[] )
 {
-
     for (int num = 0; num < nBestIndividuals; num++){
         for(int sem = 0; sem < JOB*MACHINE; sem++){
             pSemente[num].push_back(pRota[sem]);
         }
     }
-
     return NULL;
-
 }
 
 // MÉTODO CRIADO PARA REDUZIR REPETIÇÃO DO SEU CÓDIGO
@@ -1290,21 +1292,28 @@ int main(int argc, char **argv)
     int P[MACHINE*JOB];
 
     AtualizarVetorComArray( P, bestSeedBuscaLocal );
-    int scoreFinal = score[0] = factivel(P,R,1,T);
+    int scoreFinal = factivel(P,R,1,T);
 
-    if(scoreFinal > bestScorePermutacao){
+    if(scoreFinal < bestScorePermutacao){
         cout << "Busca local foi mais eficiente" << endl;
-        cout << "Score: " scoreFinal << endl;
-        for (int seq = 0; seq < JOB*MACHINE; seq++)
-            vetBestSequence[seq] = bestSeedBuscaLocal[seq];
+        cout << "Score foi de: " << scoreFinal << endl;
+        cout << "Score permutacao: " << bestScorePermutacao << endl;
+        seedFinal = bestSeedBuscaLocal;
     }
     else
     {
         cout << "Busca por permutação foi mais eficiente" << endl;
-        cout << "Score: " + scoreFinal << endl;
-        for (int seq = 0; seq < JOB*MACHINE; seq++)
-            vetBestSequence[seq] = listaSolucaoPermutacao[seq];
+        cout << "Score foi de: " << bestScorePermutacao << endl;
+        cout << "Score busca local: " << scoreFinal << endl;
+        seedFinal = listaSolucaoPermutacao;
     }
+
+    cout << " \n Melhor geração encontra " << endl;
+    cout << " Semente: " << endl;
+        for (int num = 0; num < JOB*MACHINE; num++){
+            cout << seedFinal[num] << ", ";
+        }
+    cout << endl;
 
     getchar();
 
@@ -1355,8 +1364,7 @@ int main(int argc, char **argv)
     ssHeader << "Sequencia;";
 
     for (int i=0; i < JOB * MACHINE; i++){
-        ssResult << vetBestSequence[i] << "," ;
-
+        ssResult << seedFinal[i] << "," ;
     }
 
     ssResult << ";";
@@ -2294,7 +2302,9 @@ float Objective(GAGenome& g)
                 intSolucoesNaoFactiveis++;
             }
 
-            permutacao(SS, score[num]);
+            //permutacao(SS, score[num]);
+
+            insercao(SS, 2, 5);
 
             score[0] = bestScorePermutacao;
 
@@ -2436,7 +2446,7 @@ void localSearch(const GAStatistics &g)
                         bestCurrent = fitness;
                         //mudo a semente
                         bestSeed = newSS;
-                        bestScorePermutacao = bestSeed;
+                        bestSeedBuscaLocal = bestSeed;
                         //cout << "\nAtualiza solucao em Local Search: " << bestCurrent << endl;
                         //getchar();
                     }
@@ -2950,6 +2960,7 @@ void permutacao(vector<int> vet, int originalScore)
     int bestScore = 0;
     int score = 0;
     bool melhorou = false;
+    //Armazena as possíveis soluções gerados pela permutacao
     vector<int> SSS;
 
     if(bestScorePermutacao <= originalScore && bestScorePermutacao > 0){
@@ -2994,23 +3005,34 @@ void permutacao(vector<int> vet, int originalScore)
 //=============Algoritmo de Inserção======================
 void insercao(vector<int> vet, int startWindow,int finalWindow)
 {
-
-    int j;
-    int k;
+    int cont;
+    int aux;
+    bool melhorou = false;
+    //Armazena as possíveis soluções gerados pela insercao
+    vector<int> SSS;
 
     if(startWindow >= 0 && finalWindow <= vet.size())
     {
-        for(size_t i = startWindow; i < finalWindow; i++){
-
-            k = vet[i];
-            j = i - 1;
-
-            while(j>=0 && vet[j]>0){
-                vet[j + 1] = vet[j];
-                j--;
+        for(size_t i = 0; i < MACHINE; i++){
+            if(melhorou == true){
+                vet = listaSolucaoInsercao;
+                melhorou = false;
             }
-            vet[j+1]=k;
+            for(size_t j = (i*JOB); j < (JOB*(i+1)); j++){
+                SSS = vet;
+                for(size_t k = startWindow; k < finalWindow; k++){
+                    if(j < startWindow || j > finalWindow){
+                        aux = vet[j];
+                        cont = k - 1;
+                    }
+                    while(cont>=0 && vet[cont]>0){
+                        vet[cont + 1] = vet[cont];
+                        cont--;
+                    }
+                    vet[cont+1]=aux;
+                }
+            }
+        }
     }
-
 }
-}
+//=======================================================
