@@ -132,7 +132,7 @@ int intMakeSpanOtimo;
 int intProblema; // LA?
 int intAbordagem; // 1 = Semente não-factível; 2 = FIFO; 3 = FIFO + SPT; 4 = FIFO + LPT
 int intInstancia = 1; // Número da execução
-int outIter = 1; // quantidade de iterações externas
+int outIter = 200; // quantidade de iterações externas
 string strSemente;
 
 int score_ant = ITER;
@@ -1299,7 +1299,7 @@ int main(int argc, char **argv)
 
     int P[MACHINE*JOB];
 
-    AtualizarVetorComArray( P, S[0] );
+    AtualizarVetorComArray( P, S[0]);
     int scoreFinal = factivel(P,R,1,T);
 
     if((scoreFinal < bestScorePermutacao) && (scoreFinal < bestScoreInsercao)){
@@ -3113,44 +3113,41 @@ void insercao(vector<int> vet, int originalScore)
 //=======================================================
 //Verifica se o intervalo da janela está ok.
 void entrarInsercao(vector<int> SS, int originalScore){
-    if((startWindow >= 0 && startWindow < JOB) && (finalWindow >= 0 && finalWindow < JOB)){
+    if((startWindow >= 0 && startWindow < JOB) && (finalWindow > 0 && finalWindow < JOB)){
         insercao(SS, originalScore);
     }
     else{
         char resp;
-        cout << "O intervalo da janela está fora do tamanho do vetor" << endl;
+        cout << "O intervalo da janela esta fora do tamanho do vetor" << endl;
         cout << "Tamanho janela - Inicio: " << startWindow << " - Final: " << finalWindow << endl;
         cout << "Tamanho do espaco de procura - inicio: 0" << " - Final: " << JOB << endl;
-        cout << "Deseja informar outra janela?: S ou N: ";
+        cout << "Deseja informar indice da janela manualmente?: S ou N: ";
         cin >> resp;
-        if((resp == 's' || resp == 'S')){
-            cout << "informe o inicio da janela(indice) entre 0 e " << SS.size() << " : ";
+        if(resp == 's' || resp == 'S'){
+            cout << "informe o inicio da janela(indice) entre 0 e " << JOB << " : ";
             cin >> startWindow;
             cout << "Informe o final da janela(indice) : ";
             cin >> finalWindow;
 
-            cout << "====Janela gerada===" << endl;
+            cout << "========Janela gerada=======" << endl;
             cout << "Inicio (indice): " << startWindow << ", Final(indice): " << finalWindow << endl;
 
             insercao(SS, originalScore);
         }
         else{
-            char resp;
-            cout << "Deseja que seja gerado outra janela automaticamente?: S ou N: ";
-            cin >> resp;
-            if((resp == 's' || resp == 'S')){
+            cout << "Uma nova janela sera gerada automaticamente." << endl;
 
-                //startWindow = ((int) JOB / 2) - 1;
-                //finalWindow = ((int) (JOB - (JOB / 2)) + 2);
+            startWindow = rand() % ((JOB/2) + 1); //Gera numero aleatoria de 1 a metade no numero de JOBs
+            finalWindow = rand() % (startWindow + ((JOB/2)) + 1); //Gera numero aleatoria entre a janela inicial mais metade
 
-                startWindow = rand() % ((JOB/2) + 1); //Gera numero aleatoria de 1 a metade no numero de JOBs
-                finalWindow = rand() % (startWindow + ((JOB/2)) + 1); //Gera numero aleatoria entre a janela inicial mais metade
+            cout << "========Nova Janela gerada========" << endl;
+            cout << "Inicio (indice): " << startWindow << ", Final(indice): " << finalWindow << endl;
+            cout << "===================================" << endl;
+            //Chama a funcao insercao já com a nova janela gerada.
+            getchar();getchar();
 
-                cout << "====Janela gerada===" << endl;
-                cout << "Inicio (indice): " << startWindow << ", Final(indice): " << finalWindow << endl;
-                //Chama a funcao insercao já com a nova janela gerada.
-                insercao(SS, originalScore);
+            insercao(SS, originalScore);
             }
         }
     }
-}
+
