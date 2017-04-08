@@ -82,7 +82,6 @@ int bestScorePermutacao;
 //bestScoreInsercao: Guarda o melhor score encontrado na função insercao
 vector <int> listaSolucaoInsercao;
 int bestScoreInsercao;
-//bestSeedBuscaLocal - Armazena o melhor resultado entre as
 vector<int> bestSeedBuscaLocal;
 vector<int> seedFinal;
 //==================FINAL METODOS DE BUSCA LOCAL - PERMUTAÇÃO/INSERÇÃO====================================
@@ -3062,25 +3061,27 @@ void insercao(vector<int> vet, int originalScore)
                     }
                 }
                 //verifica se o j está fora da janela
-                else if(j > (finalWindow + (m*JOB))){
-                    for(size_t idx = JOB + (m*JOB); idx >= startWindow; idx--){
-                        SSS[idx-1] += SSS[idx];
-                        SSS[idx] = SSS[idx-1] - SSS[idx];
-                        SSS[idx-1] -= SSS[idx];
-                    }
+                else {
+                    if(j > (finalWindow + (m*JOB))){
+                        for(size_t idx = JOB + (m*JOB); idx >= startWindow; idx--){
+                            SSS[idx-1] += SSS[idx];
+                            SSS[idx] = SSS[idx-1] - SSS[idx];
+                            SSS[idx-1] -= SSS[idx];
+                        }
 
-                    // Apenas o menor score interessa.
-                    AtualizarVetorComArray( P, SSS );
+                        // Apenas o menor score interessa.
+                        AtualizarVetorComArray( P, SSS );
 
-                    score = factivel(P,R,1,T);
+                        score = factivel(P,R,1,T);
 
-                    // Encontra as soluções factiveis
-                    if (score < ITER) {
-                        if(score < bestScore){
-                            melhorou = true;
-                            bestScore = score;
-                            listaSolucaoInsercao = SSS;
-                            printf("\nSolucao melhor: %d", score);
+                        // Encontra as soluções factiveis
+                        if (score < ITER) {
+                            if(score < bestScore){
+                                melhorou = true;
+                                bestScore = score;
+                                listaSolucaoInsercao = SSS;
+                                printf("\nSolucao melhor: %d", score);
+                            }
                         }
                     }
                 }
@@ -3089,6 +3090,7 @@ void insercao(vector<int> vet, int originalScore)
     }
 }
 //=======================================================
+//Verifica se o intervalo da janela está ok.
 void entrarInsercao(vector<int> SS, int originalScore){
     if((startWindow >= 0 && startWindow < JOB) && (finalWindow >= 0 && finalWindow < JOB)){
         insercao(SS, originalScore);
@@ -3097,7 +3099,7 @@ void entrarInsercao(vector<int> SS, int originalScore){
         char resp;
         cout << "O intervalo da janela está fora do tamanho do vetor" << endl;
         cout << "Tamanho janela - Inicio: " << startWindow << " - Final: " << finalWindow << endl;
-        cout << "Tamanho do vetor - inicio: 0" << " - Final: " << SS.size();
+        cout << "Tamanho do espaco de procura - inicio: 0" << " - Final: " << JOB << endl;
         cout << "Deseja informar outra janela?: S ou N: ";
         cin >> resp;
         if((resp == 's' || resp == 'S')){
@@ -3105,14 +3107,23 @@ void entrarInsercao(vector<int> SS, int originalScore){
             cin >> startWindow;
             cout << "Informe o final da janela(indice) : ";
             cin >> finalWindow;
+
+            cout << "====Janela gerada===" << endl;
+            cout << "Inicio (indice): " << startWindow << ", Final(indice): " << finalWindow << endl;
+
+            insercao(SS, originalScore);
         }
         else{
             char resp;
             cout << "Deseja que seja gerado outra janela automaticamente?: S ou N: ";
+            cin >> resp;
             if((resp == 's' || resp == 'S')){
 
-                startWindow = ((int) SS.size() / 2) - 1;
-                finalWindow = ((int) (SS.size()- (SS.size() / 2)) + 2);
+                //startWindow = ((int) JOB / 2) - 1;
+                //finalWindow = ((int) (JOB - (JOB / 2)) + 2);
+
+                startWindow = rand() % ((JOB/2) + 1); //Gera numero aleatoria de 1 a metade no numero de JOBs
+                finalWindow = rand() % (startWindow + ((JOB/2)) + 1); //Gera numero aleatoria entre a janela inicial mais metade
 
                 cout << "====Janela gerada===" << endl;
                 cout << "Inicio (indice): " << startWindow << ", Final(indice): " << finalWindow << endl;
