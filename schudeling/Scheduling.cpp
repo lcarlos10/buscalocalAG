@@ -132,7 +132,7 @@ int intMakeSpanOtimo;
 int intProblema; // LA?
 int intAbordagem; // 1 = Semente não-factível; 2 = FIFO; 3 = FIFO + SPT; 4 = FIFO + LPT
 int intInstancia = 1; // Número da execução
-int outIter = 200; // quantidade de iterações externas
+int outIter = 1; // quantidade de iterações externas
 string strSemente;
 
 int score_ant = ITER;
@@ -1299,24 +1299,32 @@ int main(int argc, char **argv)
 
     int P[MACHINE*JOB];
 
-    AtualizarVetorComArray( P, bestSeedBuscaLocal );
+    AtualizarVetorComArray( P, S[0] );
     int scoreFinal = factivel(P,R,1,T);
 
-    if(scoreFinal < bestScorePermutacao){
+    if((scoreFinal < bestScorePermutacao) && (scoreFinal < bestScoreInsercao)){
         cout << "Busca local foi mais eficiente" << endl;
-        cout << "Score foi de: " << scoreFinal << endl;
+        cout << "Score busca local foi de: " << scoreFinal << endl;
         cout << "Score permutacao: " << bestScorePermutacao << endl;
+        cout << "Score insercao: " << bestScoreInsercao << endl;
         seedFinal = bestSeedBuscaLocal;
     }
-    else
-    {
-        cout << "Busca por permutação foi mais eficiente" << endl;
-        cout << "Score foi de: " << bestScorePermutacao << endl;
+    else if((bestScorePermutacao < scoreFinal) && (bestScorePermutacao < bestScoreInsercao)){
+        cout << "Busca por permutacao foi mais eficiente" << endl;
+        cout << "Score de permutacao foi de: " << bestScorePermutacao << endl;
         cout << "Score busca local: " << scoreFinal << endl;
+        cout << "Score insercao: " << bestScoreInsercao << endl;
         seedFinal = listaSolucaoPermutacao;
     }
+    else{
+        cout << "Busca por insercao foi mais eficiente" << endl;
+        cout << "Score de insercao foi de: " << bestScoreInsercao << endl;
+        cout << "Score busca local: " << scoreFinal << endl;
+        cout << "Score insercao: " << bestScorePermutacao << endl;
+        seedFinal = listaSolucaoInsercao;
+    }
 
-    cout << " \n Melhor geração encontra " << endl;
+    cout << " \n Melhor geracao encontra " << endl;
     cout << " Semente: " << endl;
         for (int num = 0; num < JOB*MACHINE; num++){
             cout << seedFinal[num] << ", ";
@@ -2279,6 +2287,7 @@ float Objective(GAGenome& g)
         /// TESTA O GENOMA
         /////////////////////////////////////////////
         //Permuta todas as sementes em S com base no genoma 'genome'
+        cout << "Testa genoma" << endl;
 
         vector<int> SS;
         //bestCurrent = ITER;
@@ -2296,7 +2305,7 @@ float Objective(GAGenome& g)
                     }
                 }
             }
-
+            cout << "-----Saindo teste genoma-----";
             // Apenas o menor score interessa.
             AtualizarVetorComArray( P, SS );
 
@@ -2309,23 +2318,32 @@ float Objective(GAGenome& g)
                 intSolucoesNaoFactiveis++;
             }
 
-            //permutacao(SS, score[num]);
+            cout << endl << "------Metodo de permutacao------" << endl;
+            //Metodo de permutacao
+            permutacao(SS, score[num]);
+            cout << endl << "-------Saindo permutacao------" << endl;
 
+            cout << endl << "------Metodo de insercao------" << endl;
+            //Metodo de insercao
             entrarInsercao(SS, score[num]);
+            cout << endl << "-----Saindo insercao-----" << endl;
 
-            score[0] = bestScorePermutacao;
+            //if(bestScorePermutacao < bestScoreInsercao)
+            //    score[0] = bestScorePermutacao;
+            //else
+            //    score[0] = bestScoreInsercao;
 
-            if(score[0] < bestCurrent) bestCurrent = score[0];
+            //if(score[0] < bestCurrent) bestCurrent = score[0];
             ///////////////////////////////////////////////////
             // Imprime se melhorou
             ///////////////////////////////////////////////////
-            if (score[0] < score_ant) {
+            /*if (score[0] < score_ant) {
                 for (int seq = 0; seq < JOB*MACHINE; seq++){
                     cout << listaSolucaoPermutacao[seq] << endl;
                     vetBestSequence[seq] = listaSolucaoPermutacao[seq];
                 }
                 return (float)score[0];
-            }
+            }*/
         }
      }
      return (float)score[0];
@@ -2451,13 +2469,12 @@ void localSearch(const GAStatistics &g)
                     ////////////////////////////////////////////////////
                     if(fitness < bestCurrent) {
                         bestCurrent = fitness;
-                        //mudo a semente
+                        //muda a semente
                         bestSeed = newSS;
-                        bestSeedBuscaLocal = bestSeed;
+                        //bestSeedBuscaLocal = bestSeed;
                         //cout << "\nAtualiza solucao em Local Search: " << bestCurrent << endl;
                         //getchar();
                     }
-
                     //cout << endl;
                     //cout << currentCriticalPath[j] << "  " << job2+1 << "  " << opr2+1 << "  " << maq2 << endl;
                     //cout << currentCriticalPath[j] << "  " << bgn2 << "  " << fnl2 << "  " << pos2 << endl;
@@ -2967,22 +2984,23 @@ void permutacao(vector<int> vet, int originalScore)
     int bestScore = 0;
     int score = 0;
     bool melhorou = false;
-    //Armazena as possíveis soluções gerados pela permutacao
+    //Armazena as possíveis soluções gerados pela permutacao.
     vector<int> SSS;
 
     if(bestScorePermutacao <= originalScore && bestScorePermutacao > 0){
         bestScore = bestScorePermutacao;
     }else{
         bestScore = originalScore;
+        bestScorePermutacao = originalScore;
     }
 
-    //Intervalo das maquinas
+    //Delimita o intervalo das maquinas
     for(size_t i = 0; i < MACHINE; i++){
         if(melhorou == true){
             vet = listaSolucaoPermutacao;
             melhorou = false;
         }
-        //Intervalo dos jobs dentro das maquinas
+        //Delimita o intervalo dos jobs dentro das maquinas
         for(size_t j = (i*JOB); j < (JOB*(i+1)); j++){
             SSS = vet;
             //Função de permutacao
@@ -3008,8 +3026,8 @@ void permutacao(vector<int> vet, int originalScore)
             }
         }
     }
-    //verifica se teve alguma melhora no individuo comparado a populacao ja avaliada
-    if(!(bestScorePermutacao > bestScore))
+    //verifica se teve alguma melhora no individuo comparado nas populavcoes ja avaliadas
+    if((bestScorePermutacao > bestScore))
         bestScorePermutacao = bestScore;
 }
 //=======================================================
@@ -3025,11 +3043,11 @@ void insercao(vector<int> vet, int originalScore)
 
     if(bestScoreInsercao <= originalScore && bestScoreInsercao > 0)
         bestScore = bestScoreInsercao;
-    else
+    else{
         bestScore = originalScore;
+        bestScoreInsercao = originalScore;
+    }
 
-    if(startWindow >= 0 && finalWindow <= vet.size())
-    {
         for(size_t m = 0; m < MACHINE; m++){
             if(melhorou == true){
                 vet = listaSolucaoInsercao;
@@ -3039,7 +3057,7 @@ void insercao(vector<int> vet, int originalScore)
                 SSS = vet;
                 //verifica se o j está fora da janela
                 if(j < (startWindow + (m*JOB))){
-                    for(size_t idx = j+1; idx <= finalWindow; idx++){
+                    for(size_t idx = j+1; idx <= finalWindow + (m*JOB); idx++){
                         SSS[idx-1] += SSS[idx];
                         SSS[idx] = SSS[idx-1] - SSS[idx];
                         SSS[idx-1] -= SSS[idx];
@@ -3063,7 +3081,7 @@ void insercao(vector<int> vet, int originalScore)
                 //verifica se o j está fora da janela
                 else {
                     if(j > (finalWindow + (m*JOB))){
-                        for(size_t idx = JOB + (m*JOB); idx >= startWindow; idx--){
+                        for(size_t idx = (JOB + (m*JOB))-1; idx >= startWindow + (m*JOB); idx--){
                             SSS[idx-1] += SSS[idx];
                             SSS[idx] = SSS[idx-1] - SSS[idx];
                             SSS[idx-1] -= SSS[idx];
@@ -3087,7 +3105,10 @@ void insercao(vector<int> vet, int originalScore)
                 }
             }
         }
-    }
+        //verifica se teve alguma melhora no individuo comparado nas populavcoes ja avaliadas
+        if((bestScoreInsercao > bestScore)){
+            bestScoreInsercao = bestScore;
+        }
 }
 //=======================================================
 //Verifica se o intervalo da janela está ok.
@@ -3127,7 +3148,7 @@ void entrarInsercao(vector<int> SS, int originalScore){
 
                 cout << "====Janela gerada===" << endl;
                 cout << "Inicio (indice): " << startWindow << ", Final(indice): " << finalWindow << endl;
-
+                //Chama a funcao insercao já com a nova janela gerada.
                 insercao(SS, originalScore);
             }
         }
