@@ -68,6 +68,7 @@ void permutacao(vector<int> vet, int originalScore);
 void entrarInsercao(vector<int> vet, int originalScore);
 
 //--Define a janela da insercao - Parametros passados para o  problema L01--
+//Indice final tem que ser maior que o indice inicio.
 int startWindow = 3;
 int finalWindow = 6;
 //---------------------------------------------------------------------------
@@ -2311,37 +2312,7 @@ float Objective(GAGenome& g)
 
             //permutacao(SS, score[num]);
 
-            if(startWindow < 0 && finalWindow > SS.size()){
-                entrarInsercao(SS, score[num]);
-            }
-            else{
-                char resp;
-                cout << "O intervalo da janela está fora do tamanho do vetor" << endl;
-                cout << "Tamanho janela - Inicio: " << startWindow << " - Final: " << finalWindow << endl;
-                cout << "Tamanho do vetor - inicio: 0" << " - Final: " << SS.size();
-                cout << "Deseja informar outra janela?: S ou N: ";
-                cin >> resp;
-                if((resp == 's' || resp == 'S')){
-                    cout << "informe o inicio da janela(indice) entre 0 e " << SS.size() << " : ";
-                    cin >> startWindow;
-                    cout << "Informe o final da janela(indice) : ";
-                    cin >> finalWindow;
-                }
-                else{
-                    char resp;
-                    cout << "Deseja que seja gerado outra janela automaticamente?: S ou N: ";
-                    if((resp == 's' || resp == 'S')){
-
-                        startWindow = ((int) SS.size() / 2) - 1;
-                        finalWindow = ((int) (SS.size()- (SS.size() / 2)) + 2);
-
-                        cout << "====Janela gerada===" << endl;
-                        cout << "Inicio (indice): " << startWindow << ", Final(indice): " << finalWindow << endl;
-
-                        insercao(SS, score[0]);
-                    }
-                }
-            }
+            entrarInsercao(SS, score[num]);
 
             score[0] = bestScorePermutacao;
 
@@ -3068,12 +3039,11 @@ void insercao(vector<int> vet, int originalScore)
             for(size_t j = (m*JOB); j < (JOB*(m+1)); j++){
                 SSS = vet;
                 //verifica se o j está fora da janela
-                if(j < startWindow){
-
+                if(j < (startWindow + (m*JOB))){
                     for(size_t idx = j+1; idx <= finalWindow; idx++){
-                        SSS[j] += SSS[idx];
-                        SSS[idx] = SSS[j] - SSS[idx];
-                        SSS[j] -= SSS[idx];
+                        SSS[idx-1] += SSS[idx];
+                        SSS[idx] = SSS[idx-1] - SSS[idx];
+                        SSS[idx-1] -= SSS[idx];
                     }
 
                     // Apenas o menor score interessa.
@@ -3090,14 +3060,13 @@ void insercao(vector<int> vet, int originalScore)
                             printf("\nSolucao melhor: %d", score);
                         }
                     }
-
-                    return;
                 }
-                else if(j > finalWindow){
-                    for(size_t idx = finalWindow; idx >= startWindow; idx--){
-                        SSS[j] += SSS[idx];
-                        SSS[idx] = SSS[j] - SSS[idx];
-                        SSS[j] -= SSS[idx];
+                //verifica se o j está fora da janela
+                else if(j > (finalWindow + (m*JOB))){
+                    for(size_t idx = JOB + (m*JOB); idx >= startWindow; idx--){
+                        SSS[idx-1] += SSS[idx];
+                        SSS[idx] = SSS[idx-1] - SSS[idx];
+                        SSS[idx-1] -= SSS[idx];
                     }
 
                     // Apenas o menor score interessa.
@@ -3114,50 +3083,15 @@ void insercao(vector<int> vet, int originalScore)
                             printf("\nSolucao melhor: %d", score);
                         }
                     }
-
-                    return;
                 }
             }
         }
-    }
-    else
-    {
-        char resp;
-        cout << "O intervalo da janela está fora do tamanho do vetor" << endl;
-        cout << "Tamanho janela - Inicio: " << startWindow << " - Final: " << finalWindow << endl;
-        cout << "Tamanho do vetor - inicio: 0" << " - Final: " << SS.size();
-        cout << "Deseja informar outra janela?: S ou N: ";
-        cin >> resp;
-        if((resp = 's' || resp = 'S')){
-            cout << "informe o inicio da janela(indice) entre 0 e " << SS.size() << " : ";
-            cin >> startWindow;
-            cout << "Informe o final da janela(indice) : ";
-            cin >> finalWindow;
-        }
-        else{
-            char resp;
-            cout << "Deseja que seja gerado outra janela automaticamente?: S ou N: ";
-            if((resp = 's' || resp = 'S')){
-
-                startWindow = ((int) SS.size() / 2) - 1;
-                finalWindow = ((int) (SS.size()- (SS.size() / 2)) + 2)
-
-                cout << "====Janela gerada===" << endl;
-                cout << "Inicio (indice): " << startWindow << ", Final(indice): " << finalWindow << endl;
-
-                insercao(SS, score[0]);
-            }
-        }
-
-        cout << "O intervalo da janela está fora do tamanho do vetor" << endl;
-        cout << "Tamanho janela - Inicio: " << startWindow << " - Final: " << finalWindow << endl;
-        cout << "Tamanho do vetor - inicio: 0" << " - Final: " << vet.size();
     }
 }
 //=======================================================
-void entrarInsercao(vector<int> vet, int originalScore){
-    if(startWindow < 0 && finalWindow > SS.size()){
-        insercao(SS, score[num]);
+void entrarInsercao(vector<int> SS, int originalScore){
+    if((startWindow >= 0 && startWindow < JOB) && (finalWindow >= 0 && finalWindow < JOB)){
+        insercao(SS, originalScore);
     }
     else{
         char resp;
@@ -3166,7 +3100,7 @@ void entrarInsercao(vector<int> vet, int originalScore){
         cout << "Tamanho do vetor - inicio: 0" << " - Final: " << SS.size();
         cout << "Deseja informar outra janela?: S ou N: ";
         cin >> resp;
-        if((resp = 's' || resp = 'S')){
+        if((resp == 's' || resp == 'S')){
             cout << "informe o inicio da janela(indice) entre 0 e " << SS.size() << " : ";
             cin >> startWindow;
             cout << "Informe o final da janela(indice) : ";
@@ -3175,15 +3109,15 @@ void entrarInsercao(vector<int> vet, int originalScore){
         else{
             char resp;
             cout << "Deseja que seja gerado outra janela automaticamente?: S ou N: ";
-            if((resp = 's' || resp = 'S')){
+            if((resp == 's' || resp == 'S')){
 
                 startWindow = ((int) SS.size() / 2) - 1;
-                finalWindow = ((int) (SS.size()- (SS.size() / 2)) + 2)
+                finalWindow = ((int) (SS.size()- (SS.size() / 2)) + 2);
 
                 cout << "====Janela gerada===" << endl;
                 cout << "Inicio (indice): " << startWindow << ", Final(indice): " << finalWindow << endl;
 
-                insercao(SS, score[0]);
+                insercao(SS, originalScore);
             }
         }
     }
