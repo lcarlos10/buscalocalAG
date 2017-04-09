@@ -25,9 +25,9 @@ int factivel(int *vPriorities, int *vSequences, int iPrioMode, int *iTEMPO);
 
 #define PROGRAMA_01
 //#define PROGRAMA_06
-// #define PROGRAMA_11
-// #define PROGRAMA_16
-// #define PROGRAMA_21
+//#define PROGRAMA_11
+//#define PROGRAMA_16
+//#define PROGRAMA_21
 
 #ifdef PROGRAMA_01
     #define MACHINE			5
