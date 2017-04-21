@@ -66,7 +66,8 @@ using namespace std;
 void insercao(vector<int> vet, int originalScore);
 void permutacao(vector<int> vet, int originalScore);
 void entrarInsercao(vector<int> vet, int originalScore);
-
+void insercaoCompleta(vector<int> vet, int originalScore);
+void mostraResultadoFinais(size_t opcao, size_t scoreFinal);
 //--Define a janela da insercao - Parametros passados para o  problema L01--
 //Indice final tem que ser maior que o indice inicio.
 int startWindow = 3;
@@ -84,6 +85,10 @@ vector <int> listaSolucaoInsercao;
 int bestScoreInsercao;
 vector<int> bestSeedBuscaLocal;
 vector<int> seedFinal;
+
+vector <int> listaSolucaoInsercaoCompleta;
+int bestScoreInsercaoCompleta;
+
 //==================FINAL METODOS DE BUSCA LOCAL - PERMUTAÇÃO/INSERÇÃO====================================
 
 //User-defined function declarations
@@ -133,7 +138,7 @@ int intMakeSpanOtimo;
 int intProblema; // LA?
 int intAbordagem; // 1 = Semente não-factível; 2 = FIFO; 3 = FIFO + SPT; 4 = FIFO + LPT
 int intInstancia = 1; // Número da execução
-int outIter = 1; // quantidade de iterações externas
+int outIter = 2; // quantidade de iterações externas
 string strSemente;
 
 int score_ant = ITER;
@@ -790,7 +795,7 @@ int SetProblem( int argc, char **argv ){
 
         } else {
             printf( "Problema deve estar entre LA01 e LA05");
-            getchar();
+            //getchar();
             return 0; // 0 = erro
 
         }
@@ -895,7 +900,7 @@ int SetProblem( int argc, char **argv ){
 
         } else {
             printf( "Problema deve estar entre LA06 e LA10");
-            getchar();
+            //getchar();
             return 0; // 0 = erro
 
         }
@@ -1025,7 +1030,7 @@ int SetProblem( int argc, char **argv ){
 
         } else {
             printf( "Problema deve estar entre LA11 e LA15");
-            getchar();
+            //getchar();
             return 0; // 0 = erro
 
         }
@@ -1105,7 +1110,7 @@ int SetProblem( int argc, char **argv ){
 
         } else {
             printf( "Problema deve estar entre LA16 e LA20");
-            getchar();
+            //getchar();
             return 0; // 0 = erro
 
         }
@@ -1210,7 +1215,7 @@ int SetProblem( int argc, char **argv ){
 
         } else {
             printf( "Problema deve estar entre LA21 e LA25");
-            getchar();
+            //getchar();
             return 0; // 0 = erro
 
         }
@@ -1238,7 +1243,7 @@ int main(int argc, char **argv)
     //    return 0;
     //}
 
-    SetProblema(11);
+    SetProblema(1);
 
     system("cls");
 
@@ -1307,32 +1312,51 @@ int main(int argc, char **argv)
     int scoreFinal = factivel(P,R,1,T);
 
     //Compara o melhor e apresenta o makespan das soluções encontradas na busca local de permutacao, insercao e
-    if((scoreFinal < bestScorePermutacao) && (scoreFinal < bestScoreInsercao)){
-        cout << "Busca local foi mais eficiente" << endl;
-        cout << "Score busca local foi de: " << scoreFinal << endl;
-        cout << "Score permutacao: " << bestScorePermutacao << endl;
-        cout << "Score insercao: " << bestScoreInsercao << endl;
+    if((scoreFinal < bestScorePermutacao) && (scoreFinal < bestScoreInsercao)&& (scoreFinal < bestScoreInsercaoCompleta)){
+        mostraResultadoFinais(1, scoreFinal);
         seedFinal = bestSeedBuscaLocal;
     }
-    else if((bestScorePermutacao < scoreFinal) && (bestScorePermutacao < bestScoreInsercao)){
-        cout << "Busca por permutacao foi mais eficiente" << endl;
-        cout << "Score de permutacao foi de: " << bestScorePermutacao << endl;
-        cout << "Score busca local: " << scoreFinal << endl;
-        cout << "Score insercao: " << bestScoreInsercao << endl;
+    else if((bestScorePermutacao < scoreFinal) && (bestScorePermutacao < bestScoreInsercao)&& (bestScorePermutacao < bestScoreInsercaoCompleta)){
+        mostraResultadoFinais(2, scoreFinal);
         seedFinal = listaSolucaoPermutacao;
     }
-    else{
-        cout << "Busca por insercao foi mais eficiente" << endl;
-        cout << "Score de insercao foi de: " << bestScoreInsercao << endl;
-        cout << "Score busca local: " << scoreFinal << endl;
-        cout << "Score permutacao: " << bestScorePermutacao << endl;
+    else if ((bestScoreInsercao < scoreFinal) && (bestScoreInsercao < bestScorePermutacao)&& (bestScoreInsercao < bestScoreInsercaoCompleta)){
+        mostraResultadoFinais(3, scoreFinal);
         seedFinal = listaSolucaoInsercao;
     }
+    else if((bestScoreInsercaoCompleta < scoreFinal) && (bestScoreInsercaoCompleta < bestScoreInsercao) && (bestScoreInsercaoCompleta < bestScorePermutacao)){
+        mostraResultadoFinais(4, scoreFinal);
+        seedFinal = listaSolucaoInsercaoCompleta;
+    }
+    else{
+        mostraResultadoFinais(0,scoreFinal);
+    }
 
-    cout << " \n Melhor geracao encontra " << endl;
+    cout << endl << endl << " \n Geracao Permutacao " << endl;
     cout << " Semente: " << endl;
         for (int num = 0; num < JOB*MACHINE; num++){
-            cout << seedFinal[num] << ", ";
+            cout << listaSolucaoPermutacao[num] << ", ";
+        }
+    cout << endl;
+
+    cout << " \n Geracao Insercao " << endl;
+    cout << " Semente: " << endl;
+        for (int num = 0; num < JOB*MACHINE; num++){
+            cout << listaSolucaoInsercao[num] << ", ";
+        }
+    cout << endl;
+
+    cout << " \n Geracao Busca local " << endl;
+    cout << " Semente: " << endl;
+        for (int num = 0; num < JOB*MACHINE; num++){
+            cout << bestSeedBuscaLocal[num] << ", ";
+        }
+    cout << endl;
+
+    cout << " \n Geracao Insercao Completa " << endl;
+    cout << " Semente: " << endl;
+        for (int num = 0; num < JOB*MACHINE; num++){
+            cout << bestSeedBuscaLocal[num] << ", ";
         }
     cout << endl;
 
@@ -1340,6 +1364,7 @@ int main(int argc, char **argv)
 
     cout << "\n\nComplete!!! Please check the following files in your DESKTOP FOLDER: \n\"BestSequenceIdentified.txt\"\n\"Convergence.txt\"\n\n"<<endl;
 
+    //Trabalha oa tempo total gasto
     double end = clock();
     double elapsed = ((double)(end-start))/CLOCKS_PER_SEC;
 //    elapsed *= -1;
@@ -1596,7 +1621,7 @@ int SetProblema(int intProblema){
 
         } else {
             printf( "Problema deve estar entre LA06 e LA10");
-            getchar();
+            //getchar();
             return 0; // 0 = erro
 
         }
@@ -1727,7 +1752,7 @@ int SetProblema(int intProblema){
 
         } else {
             printf( "Problema deve estar entre LA11 e LA15");
-            getchar();
+            //getchar();
             return 0; // 0 = erro
 
         }
@@ -1807,7 +1832,7 @@ int SetProblema(int intProblema){
 
         } else {
             printf( "Problema deve estar entre LA16 e LA20");
-            getchar();
+            //getchar();
             return 0; // 0 = erro
 
         }
@@ -1912,7 +1937,7 @@ int SetProblema(int intProblema){
 
         } else {
             printf( "Problema deve estar entre LA21 e LA25");
-            getchar();
+            //getchar();
             return 0; // 0 = erro
 
         }
@@ -2325,7 +2350,7 @@ void setup()
             cout << S[num][sem] << ", ";
         }
         cout << endl;
-        getchar();
+        //getchar();
     }
 
     int score; // = factivel(P,R,1,T);
@@ -2830,16 +2855,21 @@ float Objective(GAGenome& g)
                 intSolucoesNaoFactiveis++;
             }
 
-            //Faz a busca independente.
+
+            //Metodo de permutacao.
             cout << endl << "------Metodo de permutacao------" << endl;
-            //Metodo de permutacao
             permutacao(SS, score[num]);
             cout << endl << "-------Saindo permutacao------" << endl;
 
-            cout << endl << "------Metodo de insercao------" << endl;
             //Metodo de insercao
+            cout << endl << "------Metodo de insercao------" << endl;
             entrarInsercao(SS, score[num]);
             cout << endl << "-----Saindo insercao-----" << endl;
+
+            //Metodo de insercao completa
+            cout << endl << "------Metodo de insercao completa------" << endl;
+            insercaoCompleta(SS, score[0]);
+            cout << endl << "-------Saindo insercao completa---------" << endl;
 
             //if(bestScorePermutacao < bestScoreInsercao)
             //    score[0] = bestScorePermutacao;
@@ -3000,6 +3030,7 @@ void localSearch(const GAStatistics &g)
     //
     //findCriticalPath(S[0]);
     S[0] = bestSeed;
+    bestSeedBuscaLocal = bestSeed;
     return;
  } // localSearch(const GAStatistics &g)
 
@@ -3082,7 +3113,7 @@ void localSearch()
                         bestInitialSeed = newSS;
                         melhora = true;
                         cout << "****Atualiza Semente Local Search: " << fitness << endl;
-                        getchar();
+                        //getchar();
                     }
                 } // if(maq  == maq2){ //permuta
             } // for(unsigned int j = i+1; j < currentCriticalPath.size() - 1; j++) {
@@ -3528,8 +3559,10 @@ void permutacao(vector<int> vet, int originalScore)
                 score = factivel(P,R,1,T);
 
                 // Encontra as soluções factiveis
-                if (score < ITER) {
-                    if(score < bestScore){
+                    if (score < ITER) {
+                        //Verifica se a solução encontrada é melhor que a anterior
+                        if(score < bestScore){
+                        //Atualizar a solução e o score encontrado
                         melhorou = true;
                         bestScore = score;
                         listaSolucaoPermutacao = SSS;
@@ -3583,7 +3616,9 @@ void insercao(vector<int> vet, int originalScore)
 
                     // Encontra as soluções factiveis
                     if (score < ITER) {
+                        //Verifica se a solução encontrada é melhor que a anterior
                         if(score < bestScore){
+                            //Atualizar a solução e o score encontrado
                             melhorou = true;
                             bestScore = score;
                             listaSolucaoInsercao = SSS;
@@ -3607,7 +3642,9 @@ void insercao(vector<int> vet, int originalScore)
 
                         // Encontra as soluções factiveis
                         if (score < ITER) {
+                            //Verifica se a solução encontrada é melhor que a anterior
                             if(score < bestScore){
+                                //Atualizar a solução e o score encontrado
                                 melhorou = true;
                                 bestScore = score;
                                 listaSolucaoInsercao = SSS;
@@ -3657,10 +3694,111 @@ void entrarInsercao(vector<int> SS, int originalScore){
             cout << "Inicio (indice): " << startWindow << ", Final(indice): " << finalWindow << endl;
             cout << "===================================" << endl;
             //Chama a funcao insercao já com a nova janela gerada.
-            getchar();getchar();
+            //getchar();
+            //getchar();
 
             insercao(SS, originalScore);
             }
         }
     }
 
+
+//=============Algoritmo de Inserção======================
+void insercaoCompleta(vector<int> vet, int originalScore)
+{
+    int P[MACHINE*JOB];
+    int bestScore = 0;
+    int score = 0;
+    bool melhorou = false;
+    //Armazena as possíveis soluções gerados pela insercao
+    vector<int> SSS;
+    size_t Si;
+    size_t Sj;
+
+    if(bestScoreInsercaoCompleta <= originalScore && bestScoreInsercaoCompleta > 0)
+        bestScore = bestScoreInsercaoCompleta;
+    else{
+        bestScore = originalScore;
+        bestScoreInsercaoCompleta = originalScore;
+    }
+
+    for(size_t m = 0; m < MACHINE; m++){
+        if(melhorou == true){
+            vet = listaSolucaoInsercaoCompleta;
+            melhorou = false;
+        }
+        SSS = vet;
+        Si = (Sj = JOB*(m+1) - 1) - 1;
+
+        for(size_t idx = ((m+1)*JOB) - 1; idx > ((Sj-Si)+1); idx--){
+            SSS[Si] += SSS[idx-2];
+            SSS[idx-2] = SSS[Si] - SSS[idx-2];
+            SSS[Si] -= SSS[idx-2];
+
+            SSS[Sj] += SSS[idx-1];
+            SSS[idx-1] = SSS[Sj] - SSS[idx-1];
+            SSS[Sj] -= SSS[idx-1];
+
+            Si -= 1;
+            Sj -= 1;
+
+            // Apenas o menor score interessa.
+            AtualizarVetorComArray( P, SSS );
+
+            score = factivel(P,R,1,T);
+
+            // Encontra as soluçoes factiveis
+            if (score < ITER) {
+                if(score < bestScore){
+                    melhorou = true;
+                    bestScore = score;
+                    listaSolucaoInsercaoCompleta = SSS;
+                    printf("\nSolucao melhor: %d", score);
+                }
+            }
+        }
+    }
+    //verifica se teve alguma melhora no individuo comparado nas populavcoes ja avaliadas
+    if((bestScoreInsercaoCompleta > bestScore)){
+        bestScoreInsercaoCompleta = bestScore;
+    }
+}
+
+void mostraResultadoFinais(size_t opcao, size_t scoreFinal){
+    switch(opcao){
+    case 1:
+        cout << "------Busca local foi mais eficiente------" << endl;
+        cout << "Score busca local foi de: " << scoreFinal << endl;
+        cout << "Score permutacao: " << bestScorePermutacao << endl;
+        cout << "Score insercao: " << bestScoreInsercao << endl;
+        cout << "Score insercao Completa: " << bestScoreInsercaoCompleta << endl;
+        break;
+    case 2:
+        cout << "------Busca por permutacao foi mais eficiente----" << endl;
+        cout << "Score de permutacao foi de: " << bestScorePermutacao << endl;
+        cout << "Score busca local: " << scoreFinal << endl;
+        cout << "Score insercao: " << bestScoreInsercao << endl;
+        cout << "Score insercao completa: " << bestScoreInsercaoCompleta << endl;
+        break;
+    case 3:
+        cout << "------Busca por insercao foi mais eficiente----" << endl;
+        cout << "Score de insercao foi de: " << bestScoreInsercao << endl;
+        cout << "Score busca local: " << scoreFinal << endl;
+        cout << "Score permutacao: " << bestScorePermutacao << endl;
+        cout << "Score insercao completa: " << bestScoreInsercaoCompleta << endl;
+        break;
+    case 4:
+        cout << "Busca por insercao completa foi mais eficiente" << endl;
+        cout << "Score de insercao completa foi de: " << bestScoreInsercaoCompleta << endl;
+        cout << "Score busca local: " << scoreFinal << endl;
+        cout << "Score permutacao: " << bestScorePermutacao << endl;
+        cout << "Score insercao: " << bestScoreInsercao << endl;
+        break;
+    default:
+        cout << "Ha resultados iguais: " << endl;
+        cout << "Score de insercao foi de: " << bestScoreInsercao << endl;
+        cout << "Score busca local: " << scoreFinal << endl;
+        cout << "Score permutacao: " << bestScorePermutacao << endl;
+        cout << "Score insercao completa" << bestScoreInsercaoCompleta << endl;
+    }
+}
